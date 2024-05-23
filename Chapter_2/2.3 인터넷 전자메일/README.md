@@ -44,7 +44,7 @@ Three major components of Electronic mail:
 <br/>
 <br/>
 
-## SMTP
+## SMTP(Simple Mail Transfer Protocol)
 
 > 💡 인터넷 전자메일을 위한 주요 애플리케이션 계층 프로토콜이다.
 
@@ -240,7 +240,7 @@ Message
 
 <br/>
 
-두 단계 절차를 거치는 주요 이유는 수신자의 메일 서버를 통해 중계하지 않으면 수신자의 에이전트는 목적지 메일 서버에 도달할 수 없기 때문이다.
+두 단계 절차를 거치는 주요 이유는 수신자의 메일 서버를 통해 중계하지 않으면 **수신자의 에이전트는 목적지 메일 서버에 도달할 수 없기 때문**이다.
 
 송신자는 전자메일을 자신의 메일 서버에 먼저 저장하고, 수신자의 메일 서버는 그 메시지를 수신자의 메일 서버로 받을 때까지 30분 마다 반복해서 보내려고 한다.
 
@@ -260,3 +260,25 @@ SMTP는 `push` 프로토콜인 반면 메시지를 얻는 것은 `pull` 동작�
     - 웹 기반 전자메일이나 스마트폰 앱의 경우에 쓰인다.
     - 당연히 메일 서버는 SMTP 인터페이스와 HTTP 인터페이스 둘 다 가지고 있어야 한다.
 - `IMAP` : RFC 3501에 정의된 인터넷 메일 접근 프로토콜
+
+### 왜 SMTP를 사용?
+
+> 웹 서비스면 https로 통일해도 되지 않을까요?
+
+http를 통해서도 메일서비스는 구축은 가능합니다.
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/a363ba31-2cbb-490c-8046-c154992479f8)
+
+그러나 어느정도 보안이 충족된 상태에서 굳이 통신에서 https를 쓰는 것 자체가 **오버헤드**일 수 있습니다.
+
+MSA(마이크로서비스 아키텍처)에서는 REST API(http)를 통해서 컴포넌트끼리 통신하는 것이 아니라 gRPC를 통해 통신합니다. 왜냐면 **REST API는 느리기 때문입니다.**
+
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/1d47bbc2-51d1-4150-af67-b5d9f49ca08c)
+위의 그림은 퍼포먼스 비교입니다(위: REST API, 아래: gRPC). 그래프 값이 아래일수록 좋습니다. 
+말씀 드린 것처럼 https가 베스트는 아닙니다.
+
+
+효율성 외에도 좋은 편리성, 이미 많은 생태계가 이루어져 있기 때문에 SMTP를 쓰는 이유가 큽니다.
+
+예를 들어 메일 서버를 구축한다라고 했을 때, posfix를 통해 쉽게 구축할 수 있으며 API구축보다는 편리하게 구축이 가능하기 때문에 그러지 않을까 싶습니다.
+
+출처) https://www.inflearn.com/questions/1066895/ftp-smtp%EA%B0%99%EC%9D%80%EA%B1%B8-%EA%B5%B3%EC%9D%B4-%EC%93%B0%EB%8A%94-%EC%9D%B4%EC%9C%A0%EA%B0%80-%EB%AC%B4%EC%97%87%EC%9D%B8%EC%A7%80-%EA%B6%81%EA%B8%88%ED%95%A9%EB%8B%88%EB%8B%A4
