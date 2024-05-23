@@ -400,6 +400,7 @@ HTTP 서버는 상태를 유지하지 않는다.
 <br/>
 <br/>
 
+
 ## 프록시 서버 동작 과정
 
 1. 브라우저는 웹 캐시와 TCP 연결을 설정하고 웹 캐시에 있는 객체에 대한 HTTP 요청을 보낸다.
@@ -586,6 +587,16 @@ Server: Apache/1.3.0 (Unix)
 
 <br/>
 <br/>
+
+## 캐시 쿠키 차이
+
+### 쿠키 : 클라이언트에 저장 -> 서버와의 통신에 사용
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/1185baca-987f-44cf-94f1-a7d4445994d5)
+
+### 캐시 : 브라우저 내부에 저장 -> 페이지 로딩 속도를 향상
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/aac59f43-ba03-4784-9884-199ea6c03dba)
+
+<br/>
 <br/>
 
 # 2.2.6 HTTP/2
@@ -596,6 +607,8 @@ HTTP/2의 주요 목표는 하나의 TCP 연결상에서 멀티플렉싱 요청/
 요청 우선순위화, 서버 푸시, HTTP 헤더 필드의 효율적인 압축 기능 등을 제공한다.
 
 HTTP/2는 클라이언트와 서버 간의 데이터 포맷 방법과 전송 방법을 변경했다.
+
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/d51b8682-f1bc-4f6e-b282-3f8b7a43c7af)
 
 <br/>
 <br/>
