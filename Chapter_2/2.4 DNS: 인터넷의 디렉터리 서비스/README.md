@@ -60,6 +60,9 @@ DNS 프로토콜은 `UDP` 상에서 수행되고 `포트 번호 53`을 이용한
 
 ### [참고] DNS가 UDP를 사용하는 이유
 
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/58f0f2be-063b-46e6-a4b2-9df56925b630)
+
+
 #### 1️⃣ 빠른 속도
 
 TCP의 경우 데이터 전송 시작 전에 3-way-handshaking 과정이 있는 반면, UDP는 연결 설정에 드는 비용이 없다.
@@ -474,6 +477,11 @@ DNS의 요청과 응답 메시지는 모두 아래 그림과 같은 포맷을 �
 
 ### DDoS 대역폭 플러딩 공격
 
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/26ee8dee-6388-43d1-b5b0-b4230722b060)
+
+**DDos Attack** : 고의로 접속량을 폭주시켜 서버를 마비시킴
+
+
 공격자는 DNS 루트 서버로 다량의 패킷을 보내려는 시도를 하여 다른 DNS 질의들이 응답을 받지 못하게 하려 한다.
 
 실제로 이 일이 일어났지만, 많은 DNS 루트 서버들은 루트 서버로 향하는 공격자가 사용한 ICMP 핑 메시지를 블록하도록 형상화한 패킷 필터로 보호되었고,  
@@ -489,8 +497,11 @@ DNS의 요청과 응답 메시지는 모두 아래 그림과 같은 포맷을 �
 
 ### DNS 중독 공격
 
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/59c973bf-037d-45c2-a2ad-573ba2a9b045)
+
+
 공격자는 DNS 서버로 가짜 응답을 보내어 그 서버가 자신의 캐시에 가짜 레코드를 받아들이도록 속임수를 쓴다.
 
-이러한 공격은 웹 사용자들을 공격자의 웹사이트로 유도하는 데 이용될 수 있다.
+이러한 공격은 웹 사용자들을 공격자의 웹사이트(**악성 사이트**)로 유도하는 데 이용될 수 있다.
 
 이러한 공격을 막기 위해 DNS 보안 확장 프로토콜이 개발되어 사용되고 있다.
