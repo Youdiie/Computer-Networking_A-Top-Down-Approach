@@ -4,6 +4,9 @@
 
 두 프로그램을 실행하면 프로세스가 생성되고, 두 프로세스가 소켓으로부터 읽고 쓰기를 통해 서로 통신한다.
 
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/b8886f43-1d3b-4135-a5ee-2e6db7df55fd)
+
+
 <br/>
 <br/>
 
@@ -169,6 +172,8 @@ TCP 소켓을 생성할 때, 서버에 있는 `환영(welcome) 소켓`의 주소
 
 소켓을 생성한 후 클라이언트는 3-way handshake를 하고 서버와 TCP 연결을 설정한다. (핸드셰이킹은 프로그램에서 전혀 인지 못한다.)
 
+`clientSocket.connect((serverName, serverPort))`
+
 <br/>
 
 핸드셰이킹 동안 서버는 **해당 클라이언트에게 지정되는 새로운 소켓**을 생성한다. 이를 `연결 소켓`이라고 한다.
@@ -254,3 +259,8 @@ while True:
     # 응답을 보내고 연결 소켓을 닫는다. 그러나 환영소켓인 serverSocket이 열려있어 다른 클라이언트가 서버에 연결을 요청할 수 있다. 
     connectionSocket.close()
 ```
+
+<br/>
+
+## TCP vs UDP
+![image](https://github.com/Youdiie/Computer-Networking_A-Top-Down-Approach/assets/87409148/22b6c144-808e-4357-ab99-21b5deafbb4e)
